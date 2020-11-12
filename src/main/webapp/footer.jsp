@@ -8,5 +8,4 @@
     <div class="about">
         Copyright (c) YoungCulture Web Shop
     </div>
-
 </div>

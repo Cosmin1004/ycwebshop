@@ -1,4 +1,4 @@
-package com.youngculture.servlets;
+package com.youngculture.servlet;
 
 import com.youngculture.repository.ProductRepository;
 import com.youngculture.repository.ProductRepositoryImpl;

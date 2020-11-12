@@ -22,11 +22,11 @@ public class FileReaderUtil {
             boolean skipLine = false;
 
             while (line != null) {
-                if(line.isEmpty()) {
+                if (line.isEmpty()) {
                     skipLine = true;
                 }
 
-                if( ! skipLine) {
+                if (!skipLine) {
                     String[] values = line.split(",");
                     Product product = createProduct(values);
                     productList.add(product);

@@ -1,6 +1,5 @@
 package com.youngculture.repository;
 
-import com.youngculture.model.Category;
 import com.youngculture.model.Product;
 
 import java.io.InputStream;
