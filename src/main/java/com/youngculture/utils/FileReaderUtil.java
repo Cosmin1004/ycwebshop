@@ -22,7 +22,8 @@ public class FileReaderUtil {
             boolean skipLine = false;
 
             while (line != null) {
-                if (line.isEmpty()) {
+                if (line.isEmpty()
+                        || line.startsWith("##")) {
                     skipLine = true;
                 }
 
