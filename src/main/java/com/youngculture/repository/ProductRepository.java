@@ -7,12 +7,10 @@ import java.util.List;
 
 public interface ProductRepository {
 
-    List<Product> getAllProducts(InputStream inputStream);
+    List<Product> findAllProducts(InputStream inputStream);
 
-    List<Product> getAllProductsFromASpecificCategory(InputStream inputStream, String categoryString);
+    List<Product> findAllProductsFromASpecificCategory(InputStream inputStream, String categoryString);
 
-    Integer countProducts(InputStream inputStream);
-
-    Integer countProductsFromASpecificCategory(InputStream inputStream, String categoryString);
+    Product findProductByName(InputStream inputStream, String productName);
 
 }

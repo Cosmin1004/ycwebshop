@@ -5,8 +5,8 @@
 <html>
 <head>
     <title>young.culture</title>
-    <style> <%@include file="/WEB-INF/css/style.css"%> </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style> <%@include file="/WEB-INF/css/style.css"%> </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -15,20 +15,37 @@
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">YoungCulture Web Shop</a>
+        <div class="btn-group-horizonal">
+            <form action="${pageContext.request.contextPath}/product" method="get">
+                <button type="submit" class="btn btn-primary" name="categoryButton"
+                        value="all">ALL
+                </button>
+                <button type="submit" class="btn btn-primary" name="categoryButton"
+                        value="automotive">Automotive
+                </button>
+                <button type="submit" class="btn btn-primary" name="categoryButton"
+                        value="clothingAndShoes">Clothing and shoes
+                </button>
+                <button type="submit" class="btn btn-primary" name="categoryButton"
+                        value="computers">Computers
+                </button>
+                <button type="submit" class="btn btn-primary" name="categoryButton"
+                        value="phones">Phones
+                </button>
+                <button type="submit" class="btn btn-primary" name="categoryButton"
+                        value="electornics">Electronics
+                </button>
+                <button type="submit" class="btn btn-primary" name="categoryButton"
+                        value="food">Food
+                </button>
+                <button type="submit" class="btn btn-primary" name="categoryButton"
+                        value="healthAndBeauty">Health and beauty
+                </button>
+                <button type="submit" class="btn btn-primary" name="categoryButton"
+                        value="homeAndGarden">Home and garden
+                </button>
+            </form>
         </div>
-        <ul class="nav navbar-nav" style="position: center">
-            <li class="active"><a href="#">All products</a></li>
-            <li><a href="#">Automotive</a></li>
-            <li><a href="#">Clothing and shoes</a></li>
-            <li><a href="#">Computers</a></li>
-            <li><a href="#">Phones</a></li>
-            <li><a href="#">Electronics</a></li>
-            <li><a href="#">Food</a></li>
-            <li><a href="#">Health and beauty</a></li>
-            <li><a href="#">Home and garden</a></li>
-        </ul>
     </div>
 </nav>
 
@@ -36,12 +53,12 @@
     <div class="table-responsive">
         <table class="table table-hover table-sm table-striped">
             <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Price</th>
-                </tr>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+            </tr>
             </thead>
             <c:forEach var="product" items="${products}">
                 <c:set var="categoryTemp1" value="${product.category}"/>
@@ -52,6 +69,14 @@
                     <td style="text-transform: capitalize">${category}</td>
                     <td>${product.description}</td>
                     <td>${product.price }</td>
+                    <td align="center">
+                        <form action="${pageContext.request.contextPath}/product" method="post">
+                            <button type="submit" class="btn btn-primary"
+                                    name="productNameFromButton"
+                                    value="${product.name}">Add to cart
+                            </button>
+                        </form>
+                    </td>
                 </tr>
             </c:forEach>
         </table>

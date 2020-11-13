@@ -12,12 +12,12 @@ import java.util.stream.Collectors;
 public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
-    public List<Product> getAllProducts(InputStream inputStream) {
+    public List<Product> findAllProducts(InputStream inputStream) {
         return FileReaderUtil.readAllProducts(inputStream);
     }
 
     @Override
-    public List<Product> getAllProductsFromASpecificCategory(InputStream inputStream, String categoryString) {
+    public List<Product> findAllProductsFromASpecificCategory(InputStream inputStream, String categoryString) {
         Category category = CategoryUtil.processCategory(categoryString);
 
         List<Product> allProducts = FileReaderUtil.readAllProducts(inputStream);
@@ -27,21 +27,17 @@ public class ProductRepositoryImpl implements ProductRepository {
                 collect(Collectors.toList());
     }
 
-    @Override
-    public Integer countProducts(InputStream inputStream) {
-        List<Product> allProducts = FileReaderUtil.readAllProducts(inputStream);
-        return allProducts.size();
-    }
 
     @Override
-    public Integer countProductsFromASpecificCategory(InputStream inputStream, String categoryString) {
-        Category category = CategoryUtil.processCategory(categoryString);
-
+    public Product findProductByName(InputStream inputStream, String productName) {
         List<Product> allProducts = FileReaderUtil.readAllProducts(inputStream);
-
-        return Math.toIntExact(allProducts.stream().
-                filter(product -> product.getCategory() == category)
-                .count());
+        Product found = null;
+        for (Product product : allProducts) {
+            if (product.getName().equals(productName)) {
+                found = product;
+            }
+        }
+        return found;
     }
 
 }
