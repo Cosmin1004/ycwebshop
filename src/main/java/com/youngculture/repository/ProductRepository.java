@@ -9,8 +9,13 @@ public interface ProductRepository {
 
     List<Product> findAllProducts(InputStream inputStream);
 
-    List<Product> findAllProductsFromASpecificCategory(InputStream inputStream, String categoryString);
+    List<Product> findAllProductsFromASpecificCategory(InputStream inputStream,
+                                                       String categoryString);
 
     Product findProductByName(InputStream inputStream, String productName);
 
+    /*Integer countProducts(InputStream inputStream);
+
+    Integer countProductsFromASpecificCategory(InputStream inputStream,
+                                               String categoryString);*/
 }

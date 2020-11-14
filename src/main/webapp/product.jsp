@@ -5,17 +5,14 @@
 <html>
 <head>
     <title>young.culture</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style> <%@include file="/WEB-INF/css/style.css"%> </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="btn-group-horizonal">
+    <div class="centerCustom">
+        <div class="btn-group">
             <form action="${pageContext.request.contextPath}/product" method="get">
                 <button type="submit" class="btn btn-primary" name="categoryButton"
                         value="all">ALL
@@ -50,37 +47,48 @@
 </nav>
 
 <div class="container" style="margin-top: 40px">
-    <div class="table-responsive">
-        <table class="table table-hover table-sm table-striped">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Category</th>
-                <th scope="col">Description</th>
-                <th scope="col">Price</th>
-            </tr>
-            </thead>
-            <c:forEach var="product" items="${products}">
-                <c:set var="categoryTemp1" value="${product.category}"/>
-                <c:set var="categoryTemp2" value="${fn:replace(categoryTemp1, '_', ' ')}"/>
-                <c:set var="category" value="${fn:toLowerCase(categoryTemp2)}"/>
+    <c:if test="${fn:length(products) > 0}">
+        <div class="table-responsive">
+            <table class="table table-hover table-sm table-striped">
+                <thead class="theadCustom">
                 <tr>
-                    <td>${product.name}</td>
-                    <td style="text-transform: capitalize">${category}</td>
-                    <td>${product.description}</td>
-                    <td>${product.price }</td>
-                    <td align="center">
-                        <form action="${pageContext.request.contextPath}/product" method="post">
-                            <button type="submit" class="btn btn-primary"
-                                    name="productNameFromButton"
-                                    value="${product.name}">Add to cart
-                            </button>
-                        </form>
-                    </td>
+                    <th scope="col">Name</th>
+                    <c:if test="${rendered == true}">
+                        <th scope="col">Category</th>
+                    </c:if>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
                 </tr>
-            </c:forEach>
-        </table>
-    </div>
+                </thead>
+                <c:forEach var="product" items="${products}">
+                    <c:set var="categoryTemp1" value="${product.category}"/>
+                    <c:set var="categoryTemp2" value="${fn:replace(categoryTemp1, '_', ' ')}"/>
+                    <c:set var="category" value="${fn:toLowerCase(categoryTemp2)}"/>
+                    <tr>
+                        <td>${product.name}</td>
+                        <c:if test="${rendered == true}">
+                            <td style="text-transform: capitalize">${category}</td>
+                        </c:if>
+                        <td>${product.description}</td>
+                        <td>${product.price }</td>
+                        <td>
+                            <form class="centerCustom" action="${pageContext.request.contextPath}/product"
+                                  method="post">
+                                <button type="submit" class="btn btn-success"
+                                        name="productNameFromButton"
+                                        value="${product.name}">Add to cart
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+    </c:if>
+    <c:if test="${fn:length(products) == 0}">
+        <img class="imageCustom" alt="No product found..."
+             src="${pageContext.request.contextPath}/img/noProducts.png"/>
+    </c:if>
 </div>
 </body>
 

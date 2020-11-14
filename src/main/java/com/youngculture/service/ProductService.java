@@ -10,12 +10,21 @@ public interface ProductService {
 
     List<Product> getAllProducts(InputStream inputStream);
 
-    List<Product> getAllProductsFromASpecificCategory(InputStream inputStream, String categoryString);
+    List<Product> getAllProductsFromASpecificCategory(InputStream inputStream,
+                                                      String categoryString);
 
     Product getProductByName(InputStream inputStream, String productName);
 
-    void handleAddToCart(InputStream inputStream, String productName) throws IOException;
+    void handleAddToCart(InputStream inputStream, String productName)
+            throws IOException;
 
     List<Product> handleGetProducts(InputStream inputStream, String buttonCategory);
+
+    boolean handleCategoryFieldRendered(String buttonCategory);
+
+    /*Integer countProducts(InputStream inputStream);
+
+    Integer countProductsFromASpecificCategory(InputStream inputStream,
+                                               String categoryString);*/
 
 }

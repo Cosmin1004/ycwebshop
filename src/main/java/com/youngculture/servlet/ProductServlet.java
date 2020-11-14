@@ -20,7 +20,7 @@ public class ProductServlet extends HttpServlet {
     private final static long serialVersionUID = 1L;
 
     private static List<Product> productList;
-
+    private static boolean categoryRendered = true;
     private final static String resourceFile = "/WEB-INF/resources/products.txt";
 
     ProductService productService = new ProductServiceImpl();
@@ -39,7 +39,9 @@ public class ProductServlet extends HttpServlet {
 
         String buttonCategory = request.getParameter("categoryButton");
         productList = productService.handleGetProducts(inputStream, buttonCategory);
+        categoryRendered = productService.handleCategoryFieldRendered(buttonCategory);
 
+        request.setAttribute("rendered", categoryRendered);
         request.setAttribute("products", productList);
         request.getRequestDispatcher("product.jsp")
                 .forward(request, response);
@@ -56,6 +58,7 @@ public class ProductServlet extends HttpServlet {
         String productName = request.getParameter("productNameFromButton");
         productService.handleAddToCart(inputStream, productName);
 
+        request.setAttribute("rendered", categoryRendered);
         request.setAttribute("products", productList);
         request.getRequestDispatcher("product.jsp")
                 .forward(request, response);

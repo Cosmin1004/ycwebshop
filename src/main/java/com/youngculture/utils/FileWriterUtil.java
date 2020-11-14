@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 public class FileWriterUtil {
 
     private static final SimpleDateFormat simpleDateFormat =
-            new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
+            new SimpleDateFormat("dd.MM.yyyy HH.mm.ss");
 
     public static void writeProductToFile(Product product) {
         try {
@@ -18,17 +18,16 @@ public class FileWriterUtil {
             File file = new File(
                     System.getProperty("user.home") + "//Desktop//cart.txt");
 
-            if ( ! file.exists()) {
+            if (!file.exists()) {
                 file.createNewFile();
             }
 
-            FileWriter fw = new FileWriter(file,true);
-            fw.write(simpleDateFormat.format(timestamp)+ ": "
+            FileWriter fw = new FileWriter(file, true);
+            fw.write(simpleDateFormat.format(timestamp) + ": "
                     + "\tProduct \"" + product.getName()
                     + "\" was added to the cart.\n");
             fw.close();
-        } catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

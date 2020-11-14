@@ -18,12 +18,15 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getAllProductsFromASpecificCategory(InputStream inputStream, String categoryString) {
-        return productRepository.findAllProductsFromASpecificCategory(inputStream, categoryString);
+    public List<Product> getAllProductsFromASpecificCategory(InputStream inputStream,
+                                                             String categoryString) {
+        return productRepository
+                .findAllProductsFromASpecificCategory(inputStream, categoryString);
     }
 
     @Override
-    public Product getProductByName(InputStream inputStream, String productName) {
+    public Product getProductByName(InputStream inputStream,
+                                    String productName) {
         return productRepository.findProductByName(inputStream, productName);
     }
 
@@ -34,16 +37,36 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> handleGetProducts(InputStream inputStream, String buttonCategory) {
+    public List<Product> handleGetProducts(InputStream inputStream,
+                                           String buttonCategory) {
         List<Product> products;
-        if (buttonCategory == null) {
-            products = getAllProducts(inputStream);
-        } else if (buttonCategory.equals("all")) {
+        if (buttonCategory == null || buttonCategory.equals("all")) {
             products = getAllProducts(inputStream);
         } else {
-            products = getAllProductsFromASpecificCategory(inputStream, buttonCategory);
+            products = getAllProductsFromASpecificCategory(inputStream,
+                    buttonCategory);
         }
         return products;
     }
 
+    @Override
+    public boolean handleCategoryFieldRendered(String buttonCategory) {
+        boolean rendered = false;
+        if (buttonCategory == null || buttonCategory.equals("all")) {
+            rendered = true;
+        }
+        return rendered;
+    }
+
+    /*@Override
+    public Integer countProducts(InputStream inputStream) {
+        return productRepository.countProducts(inputStream);
+    }
+
+    @Override
+    public Integer countProductsFromASpecificCategory(InputStream inputStream,
+                                                      String categoryString) {
+        return productRepository
+                .countProductsFromASpecificCategory(inputStream, categoryString);
+    }*/
 }
