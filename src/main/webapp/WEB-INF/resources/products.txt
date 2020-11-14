@@ -1,6 +1,11 @@
+## Categorii disponibile: Automotive, Clothing and shoes, Computers,
+## Phones, Electronics, Food, Health and beauty, Home and garden
+##
+## Nume produs | Categorie | Descriere | Pret
 
 Iphone 11, phone, Descriere, 3200.20
-BMW I3, car, descriere masina, 18000
+BMW I3, car, descriere masina, 18000.2
+
 Pizza Salami, food, pizza 32 cm, 45
 Small Table, home and garden, table, 150
 Sauvage DIOR, parfume, Parfume from CD, 300

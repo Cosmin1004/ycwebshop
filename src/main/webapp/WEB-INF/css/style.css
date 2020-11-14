@@ -1,55 +1,75 @@
-#footer
-{
+#footer {
     width: 100%;
     border-top: 1px solid #E0E0E0;
-    position: fixed;
-    bottom: 0px;
+    position: absolute;
+    bottom: 0;
     margin-bottom: 20px;
     text-align: center;
-    left: 0pt;
-    background-position: 0% 0%;
+    left: 0;
+    background-position: 0 0;
 }
 
-#footer hr
-{
+#footer hr {
     width: 100%;
 }
 
 .bottom {
-    font-family: Verdana;
-    font-size : 100%;
-    color : darkslategrey;
+    font-family: Verdana, serif;
+    font-size: 100%;
+    color: black;
 }
 
 ul.bottom {
-    list-style-type : none;
-    padding : 0em;
-    margin : 0;
-    margin-top : 3em;
-    text-align : center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 3em;
+    text-align: center;
 }
 
 .bottom li {
-    display : inline;
-    margin : 0.1em 0.1em;
-    padding : 0.0em;
+    display: inline;
+    margin: 0.1em 0.1em;
+    padding: 0.0em;
 }
 
 .bottom a {
-    color : #999;
+    color: black;
 }
 
 .bottom a:hover {
-    color : darkblue;
+    color: darkblue;
 }
 
 .about {
-    color : darkslategrey;
-    font-family : Helvetica;
-    text-align : center;
-    font-size : 90%;
+    color: darkslategrey;
+    font-family: Helvetica, serif;
+    text-align: center;
+    font-size: 90%;
 }
 
 div.about {
-    margin-top : 1em;
+    margin-top: 1em;
 }
+
+.centerCustom {
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.imageCustom {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+    height: 400px;
+}
+
+.theadCustom {
+    background-color: darkslategray;
+    color: white;
+    font-style: italic;
+}
+
