@@ -14,7 +14,7 @@
     <div class="centerCustom">
         <div class="btn-group">
             <form action="${pageContext.request.contextPath}/product" method="get">
-                <button type="submit" class="btn btn-primary" name="categoryButton"
+                <button type="submit" class="btn btn-info" name="categoryButton"
                         value="all">ALL
                 </button>
                 <button type="submit" class="btn btn-primary" name="categoryButton"
@@ -64,13 +64,17 @@
                     <c:set var="categoryTemp1" value="${product.category}"/>
                     <c:set var="categoryTemp2" value="${fn:replace(categoryTemp1, '_', ' ')}"/>
                     <c:set var="category" value="${fn:toLowerCase(categoryTemp2)}"/>
+                    <c:set var="currency" value="lei"/>
+                    <c:if test="${product.category == 'AUTOMOTIVE'}">
+                        <c:set var="currency" value="$"/>
+                    </c:if>
                     <tr>
                         <td>${product.name}</td>
                         <c:if test="${rendered == true}">
                             <td style="text-transform: capitalize">${category}</td>
                         </c:if>
                         <td>${product.description}</td>
-                        <td>${product.price }</td>
+                        <td>${product.price} ${currency}</td>
                         <td>
                             <form class="centerCustom" action="${pageContext.request.contextPath}/product"
                                   method="post">

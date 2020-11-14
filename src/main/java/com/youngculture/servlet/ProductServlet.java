@@ -41,8 +41,7 @@ public class ProductServlet extends HttpServlet {
         productList = productService.handleGetProducts(inputStream, buttonCategory);
         categoryRendered = productService.handleCategoryFieldRendered(buttonCategory);
 
-        request.setAttribute("rendered", categoryRendered);
-        request.setAttribute("products", productList);
+        setRequestAttributes(request);
         request.getRequestDispatcher("product.jsp")
                 .forward(request, response);
     }
@@ -58,10 +57,14 @@ public class ProductServlet extends HttpServlet {
         String productName = request.getParameter("productNameFromButton");
         productService.handleAddToCart(inputStream, productName);
 
-        request.setAttribute("rendered", categoryRendered);
-        request.setAttribute("products", productList);
+        setRequestAttributes(request);
         request.getRequestDispatcher("product.jsp")
                 .forward(request, response);
+    }
+
+    private void setRequestAttributes(HttpServletRequest request) {
+        request.setAttribute("rendered", categoryRendered);
+        request.setAttribute("products", productList);
     }
 
 }
