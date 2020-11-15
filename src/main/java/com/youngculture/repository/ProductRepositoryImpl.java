@@ -19,9 +19,8 @@ public class ProductRepositoryImpl implements ProductRepository {
     @Override
     public List<Product> findAllProductsFromASpecificCategory(InputStream inputStream,
                                                               String categoryString) {
-        Category category = CategoryUtil.processCategory(categoryString);
-
         List<Product> allProducts = FileReaderUtil.readAllProducts(inputStream);
+        Category category = CategoryUtil.processCategory(categoryString);
 
         return allProducts.stream().
                 filter(product -> product.getCategory() == category).
@@ -39,25 +38,8 @@ public class ProductRepositoryImpl implements ProductRepository {
                 found = product;
             }
         }
+
         return found;
     }
-
-    /*@Override
-    public Integer countProducts(InputStream inputStream) {
-        List<Product> allProducts = FileReaderUtil.readAllProducts(inputStream);
-        return allProducts.size();
-    }
-
-    @Override
-    public Integer countProductsFromASpecificCategory(InputStream inputStream,
-                                                      String categoryString) {
-        Category category = CategoryUtil.processCategory(categoryString);
-
-        List<Product> allProducts = FileReaderUtil.readAllProducts(inputStream);
-
-        return Math.toIntExact(allProducts.stream().
-                filter(product -> product.getCategory() == category)
-                .count());
-    }*/
 
 }

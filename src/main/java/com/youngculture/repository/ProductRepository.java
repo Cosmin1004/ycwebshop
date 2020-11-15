@@ -14,8 +14,4 @@ public interface ProductRepository {
 
     Product findProductByName(InputStream inputStream, String productName);
 
-    /*Integer countProducts(InputStream inputStream);
-
-    Integer countProductsFromASpecificCategory(InputStream inputStream,
-                                               String categoryString);*/
 }

@@ -27,8 +27,8 @@ public class FileReaderUtil {
                     skipLine = true;
                 }
 
-                if (!skipLine) {
-                    String[] values = line.split(",");
+                if ( ! skipLine) {
+                    String[] values = line.split(";");
                     Product product = createProduct(values);
                     productList.add(product);
                 }

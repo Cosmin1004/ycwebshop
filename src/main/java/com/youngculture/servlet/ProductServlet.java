@@ -37,9 +37,9 @@ public class ProductServlet extends HttpServlet {
         InputStream inputStream =
                 context.getResourceAsStream(resourceFile);
 
-        String buttonCategory = request.getParameter("categoryButton");
-        productList = productService.handleGetProducts(inputStream, buttonCategory);
-        categoryRendered = productService.handleCategoryFieldRendered(buttonCategory);
+        String category = request.getParameter("category");
+        productList = productService.handleGetProducts(inputStream, category);
+        categoryRendered = productService.handleCategoryFieldRendered(category);
 
         setRequestAttributes(request);
         request.getRequestDispatcher("product.jsp")
