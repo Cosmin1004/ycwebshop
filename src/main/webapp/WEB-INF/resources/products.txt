@@ -1,13 +1,23 @@
 ## Categorii disponibile: Automotive, Clothing and shoes, Computers,
 ## Phones, Electronics, Food, Health and beauty, Home and garden
 ##
-## Nume produs | Categorie | Descriere | Pret
+## Nume produs ; Categorie ; Descriere ; Pret
 
-Iphone 11, phone, Descriere, 3200.20
-BMW I3, car, descriere masina, 18000.2
-
-Pizza Salami, food, pizza 32 cm, 45
-Small Table, home and garden, table, 150
-Sauvage DIOR, parfume, Parfume from CD, 300
-
-Samsung, smartphone, descriere samsung, 3400.20
+iPhone 11 ; phone ; Telefon APPLE iPhone 11, 256GB, Black ; 3250.0
+Golf 7 ; car ; Volkswagen Golf 7 facelift automata, 256 CP, 1.6 diesel; 34942
+Hugo Boss The Scent ; parfume ; Apa de Toaleta Hugo Boss The Scent, Barbati, 100 ml ; 213
+JBL Go2 ; electronics ; Boxa portabila JBL Go2, IPX7, negru ;  134
+Xiaomi Mi Band 4 ; electronics ; Bratara fitness Xiaomi Mi Band 4, Display AMOLED ; 79
+TP-Link Archer C6 ; computers ; Router wireless TP-Link Archer C6, AC1200, Gigabit, Dual-Band, Negru ; 119
+Logitech M170 ; mouse ; Mouse wireless Logitech M170, Grey ; 32
+Acer Nitro 5 AN515-54 ; laptop ; Laptop Gaming Acer Nitro 5 AN515-54 cu procesor Intel Core i5-9300H pana la 4.10 GHz, 15.6" Full HD, 8GB, 256GB SSD, NVIDIA GeForce GTX 1650 4GB, No OS, Black ; 4600
+iPhone 11 Pro ; phone ; Telefon APPLE iPhone 11 Pro, 64GB, Space Grey ; 3939.90
+SAMSUNG Galaxy S20+ ; phone ; Telefon SAMSUNG Galaxy S20+, 128GB, 8GB RAM, Dual SIM, 4G, Cosmic Black ; 2974.92
+Philips OneBlade ; beauty ; Aparat hibrid de barbierit si tuns barba Philips OneBlade QP2520/30, 3 piepteni, 1 lama suplimentara, Acumulatori, Negru/Verde ; 174.99
+Adidas Ice Dive ; healtyAndBeauty ; Set Adidas Ice Dive, barbati: After shave, 50 ml + Deodorant spray, 150 ml + Gel de dus, 250 ml ; 29.59
+Cotlet cu Parmesan ; food ; Cotlet de porc, specialitate de branza tare, pesmet, condimente ; 20 
+Pizza Traditionala ; food ; Branza burduf, ceapa rosie, kaizer, mix branzeturi(cascaval + mozzarella), sos, aluat ; 29.50
+Xiaomi Mi Robot Vacuum ;  electronics ; Robot aspirare Xiaomi Mi Robot Vacuum, 50 W, Clasa A+++, 5200 mAh, 14.4 V, App, Smart Vision Mapping, Alb ; 1499
+Playstation 4 ; computers ; Consola Sony Playstation 4 PRO (NEO), 1TB, Negru ; 1899
+FIFA20  ; computers ; Joc FIFA20 pentru PC ; 143
+Skechers ; shoes ; Ghete din piele intoarsa cu insertii de blana sintetica On The Gor ; 219

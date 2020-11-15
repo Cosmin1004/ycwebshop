@@ -1,22 +1,30 @@
-#footer {
-    width: 100%;
-    border-top: 1px solid #E0E0E0;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 20px;
-    text-align: center;
-    left: 0;
-    background-position: 0 0;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
-#footer hr {
+.footer {
+    background-color: #222;
+    border-color: #080808;
     width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#wrapper {
+    min-height: 100%;
+    position: relative;
 }
 
 .bottom {
+    font-weight: bold;
     font-family: Verdana, serif;
     font-size: 100%;
-    color: black;
+    color: white;
 }
 
 ul.bottom {
@@ -34,15 +42,15 @@ ul.bottom {
 }
 
 .bottom a {
-    color: black;
+    color: white;
 }
 
 .bottom a:hover {
-    color: darkblue;
+    color: lightgrey;
 }
 
 .about {
-    color: darkslategrey;
+    color: lightgrey;
     font-family: Helvetica, serif;
     text-align: center;
     font-size: 90%;
@@ -52,13 +60,13 @@ div.about {
     margin-top: 1em;
 }
 
-.centerCustom {
+.center {
     margin: auto;
     margin-top: 10px;
     text-align: center;
 }
 
-.imageCustom {
+.image {
     display: block;
     margin-top: 10px;
     margin-left: auto;
@@ -67,7 +75,7 @@ div.about {
     height: 400px;
 }
 
-.theadCustom {
+.thead {
     background-color: darkslategray;
     color: white;
     font-style: italic;

@@ -42,22 +42,4 @@ public class ProductRepositoryImpl implements ProductRepository {
         return found;
     }
 
-    /*@Override
-    public Integer countProducts(InputStream inputStream) {
-        List<Product> allProducts = FileReaderUtil.readAllProducts(inputStream);
-        return allProducts.size();
-    }
-
-    @Override
-    public Integer countProductsFromASpecificCategory(InputStream inputStream,
-                                                      String categoryString) {
-        Category category = CategoryUtil.processCategory(categoryString);
-
-        List<Product> allProducts = FileReaderUtil.readAllProducts(inputStream);
-
-        return Math.toIntExact(allProducts.stream().
-                filter(product -> product.getCategory() == category)
-                .count());
-    }*/
-
 }

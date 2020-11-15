@@ -58,15 +58,4 @@ public class ProductServiceImpl implements ProductService {
         return rendered;
     }
 
-    /*@Override
-    public Integer countProducts(InputStream inputStream) {
-        return productRepository.countProducts(inputStream);
-    }
-
-    @Override
-    public Integer countProductsFromASpecificCategory(InputStream inputStream,
-                                                      String categoryString) {
-        return productRepository
-                .countProductsFromASpecificCategory(inputStream, categoryString);
-    }*/
 }

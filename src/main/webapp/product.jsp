@@ -8,10 +8,11 @@
     <style> <%@include file="/WEB-INF/css/style.css"%> </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
+
 <body>
 
 <nav class="navbar navbar-inverse">
-    <div class="centerCustom">
+    <div class="center">
         <div class="btn-group">
             <form action="${pageContext.request.contextPath}/product" method="get">
                 <button type="submit" class="btn btn-info" name="categoryButton"
@@ -30,7 +31,7 @@
                         value="phones">Phones
                 </button>
                 <button type="submit" class="btn btn-primary" name="categoryButton"
-                        value="electornics">Electronics
+                        value="electronics">Electronics
                 </button>
                 <button type="submit" class="btn btn-primary" name="categoryButton"
                         value="food">Food
@@ -46,55 +47,56 @@
     </div>
 </nav>
 
-<div class="container" style="margin-top: 40px">
-    <c:if test="${fn:length(products) > 0}">
-        <div class="table-responsive">
-            <table class="table table-hover table-sm table-striped">
-                <thead class="theadCustom">
-                <tr>
-                    <th scope="col">Name</th>
-                    <c:if test="${rendered == true}">
-                        <th scope="col">Category</th>
-                    </c:if>
-                    <th scope="col">Description</th>
-                    <th scope="col">Price</th>
-                </tr>
-                </thead>
-                <c:forEach var="product" items="${products}">
-                    <c:set var="categoryTemp1" value="${product.category}"/>
-                    <c:set var="categoryTemp2" value="${fn:replace(categoryTemp1, '_', ' ')}"/>
-                    <c:set var="category" value="${fn:toLowerCase(categoryTemp2)}"/>
-                    <c:set var="currency" value="lei"/>
-                    <c:if test="${product.category == 'AUTOMOTIVE'}">
-                        <c:set var="currency" value="$"/>
-                    </c:if>
+<div id="wrapper">
+    <div class="container" style="padding-bottom: 100px;">
+        <c:if test="${fn:length(products) > 0}">
+            <div class="table-responsive">
+                <table class="table table-hover table-sm table-striped">
+                    <thead class="thead">
                     <tr>
-                        <td>${product.name}</td>
+                        <th scope="col">Name</th>
                         <c:if test="${rendered == true}">
-                            <td style="text-transform: capitalize">${category}</td>
+                            <th scope="col">Category</th>
                         </c:if>
-                        <td>${product.description}</td>
-                        <td>${product.price} ${currency}</td>
-                        <td>
-                            <form class="centerCustom" action="${pageContext.request.contextPath}/product"
-                                  method="post">
-                                <button type="submit" class="btn btn-success"
-                                        name="productNameFromButton"
-                                        value="${product.name}">Add to cart
-                                </button>
-                            </form>
-                        </td>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
                     </tr>
-                </c:forEach>
-            </table>
-        </div>
-    </c:if>
-    <c:if test="${fn:length(products) == 0}">
-        <img class="imageCustom" alt="No product found..."
-             src="${pageContext.request.contextPath}/img/noProducts.png"/>
-    </c:if>
+                    </thead>
+                    <c:forEach var="product" items="${products}">
+                        <c:set var="categoryTemp1" value="${product.category}"/>
+                        <c:set var="categoryTemp2" value="${fn:replace(categoryTemp1, '_', ' ')}"/>
+                        <c:set var="category" value="${fn:toLowerCase(categoryTemp2)}"/>
+                        <c:set var="currency" value="Lei"/>
+                        <c:if test="${product.category == 'AUTOMOTIVE'}">
+                            <c:set var="currency" value="$"/>
+                        </c:if>
+                        <tr>
+                            <td><b>${product.name}</b></td>
+                            <c:if test="${rendered == true}">
+                                <td style="text-transform: capitalize">${category}</td>
+                            </c:if>
+                            <td>${product.description}</td>
+                            <td style="color: red">${product.price} ${currency}</td>
+                            <td>
+                                <form class="center" action="${pageContext.request.contextPath}/product"
+                                      method="post">
+                                    <button type="submit" class="btn btn-success"
+                                            name="productNameFromButton"
+                                            value="${product.name}">Add to cart
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </div>
+        </c:if>
+        <c:if test="${fn:length(products) == 0}">
+            <img class="image" alt="No product found..."
+                 src="${pageContext.request.contextPath}/Images/noProducts.png"/>
+        </c:if>
+    </div>
+    <jsp:include page="/footer.jsp"/>
 </div>
 </body>
-
-<jsp:include page="/footer.jsp"/>
 </html>

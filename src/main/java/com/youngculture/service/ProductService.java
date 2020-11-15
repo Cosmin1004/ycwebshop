@@ -22,9 +22,4 @@ public interface ProductService {
 
     boolean handleCategoryFieldRendered(String buttonCategory);
 
-    /*Integer countProducts(InputStream inputStream);
-
-    Integer countProductsFromASpecificCategory(InputStream inputStream,
-                                               String categoryString);*/
-
 }
