@@ -2,6 +2,8 @@ package com.youngculture.utils;
 
 import com.youngculture.model.Category;
 
+import java.util.Arrays;
+
 public class CategoryUtil {
 
     private final static String[] automotive = {"AUTOMOTIVE", "cars", "car", "drive"};
@@ -11,8 +13,8 @@ public class CategoryUtil {
     private final static String[] phones = {"PHONES", "phone", "smartphone", "mobile"};
     private final static String[] electronics = {"ELECTRONICS", "tv", "smart-tv"};
     private final static String[] food = {"FOOD", "pizza", "burger"};
-    private final static String[] healtyAndBeauty = {"HEALTH_AND_BEAUTY", "healtyAndBeauty",
-            "cream", "parfume", "healty", "beauty"};
+    private final static String[] healthAndBeauty = {"HEALTH_AND_BEAUTY", "healthAndBeauty",
+            "cream", "parfume", "health", "beauty"};
     private final static String[] homeAndGarden = {"HOME_AND_GARDEN", "homeAndGarden",
             "table", "flowers", "furniture", "home", "garden"};
 
@@ -31,7 +33,7 @@ public class CategoryUtil {
         } else if (containsWords(categoryFromFile, phones)) {
             category = Category.PHONES;
         } else if (containsWords(categoryFromFile.
-                replaceAll("_", " "), healtyAndBeauty)) {
+                replaceAll("_", " "), healthAndBeauty)) {
             category = Category.HEALTH_AND_BEAUTY;
         } else if (containsWords(categoryFromFile, food)) {
             category = Category.FOOD;
@@ -45,15 +47,8 @@ public class CategoryUtil {
     }
 
     public static boolean containsWords(String inputString, String[] items) {
-        boolean found = false;
-        for (String item : items) {
-            if (inputString.toLowerCase()
-                    .contains(item.toLowerCase())) {
-                found = true;
-                break;
-            }
-        }
-        return found;
+        return Arrays.stream(items).anyMatch(item -> item.toLowerCase()
+                .equals(inputString.toLowerCase()));
     }
 
 }

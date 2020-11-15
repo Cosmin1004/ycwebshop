@@ -1,8 +1,6 @@
 package com.youngculture.servlet;
 
 import com.youngculture.model.Product;
-import com.youngculture.service.ProductService;
-import com.youngculture.service.ProductServiceImpl;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -18,12 +16,9 @@ import java.util.List;
 public class ProductServlet extends HttpServlet {
 
     private final static long serialVersionUID = 1L;
-
+    private final static String resourceFile = "/WEB-INF/resources/products.txt";
     private static List<Product> productList;
     private static boolean categoryRendered = true;
-    private final static String resourceFile = "/WEB-INF/resources/products.txt";
-
-    ProductService productService = new ProductServiceImpl();
 
     public ProductServlet() {
         super();
@@ -33,13 +28,11 @@ public class ProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        ServletContext context = getServletContext();
-        InputStream inputStream =
-                context.getResourceAsStream(resourceFile);
+        InputStream inputStream = setInputStream();
 
         String category = request.getParameter("category");
-        productList = productService.handleGetProducts(inputStream, category);
-        categoryRendered = productService.handleCategoryFieldRendered(category);
+        productList = ProductServletHandler.handleGetProducts(inputStream, category);
+        categoryRendered = ProductServletHandler.handleCategoryFieldRendered(category);
 
         setRequestAttributes(request);
         request.getRequestDispatcher("product.jsp")
@@ -50,16 +43,19 @@ public class ProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        ServletContext context = getServletContext();
-        InputStream inputStream =
-                context.getResourceAsStream(resourceFile);
+        InputStream inputStream = setInputStream();
 
         String productName = request.getParameter("productNameFromButton");
-        productService.handleAddToCart(inputStream, productName);
+        ProductServletHandler.handleAddToCart(inputStream, productName);
 
         setRequestAttributes(request);
         request.getRequestDispatcher("product.jsp")
                 .forward(request, response);
+    }
+
+    private InputStream setInputStream() {
+        ServletContext context = getServletContext();
+        return context.getResourceAsStream(resourceFile);
     }
 
     private void setRequestAttributes(HttpServletRequest request) {

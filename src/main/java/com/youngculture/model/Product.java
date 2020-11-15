@@ -7,7 +7,8 @@ public class Product {
     private String description;
     private Double price;
 
-    public Product(String name, Category category, String description, Double price) {
+    public Product(String name, Category category,
+                   String description, Double price) {
         this.name = name;
         this.category = category;
         this.description = description;
@@ -61,4 +62,5 @@ public class Product {
             return new Product(name, category, description, price);
         }
     }
+
 }
