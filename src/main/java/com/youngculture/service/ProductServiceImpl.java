@@ -18,9 +18,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getAllProductsFromASpecificCategory(InputStream inputStream,
-                                                             String categoryString) {
+                                                             String category) {
         return productRepository
-                .findAllProductsFromASpecificCategory(inputStream, categoryString);
+                .findAllProductsFromASpecificCategory(inputStream, category);
     }
 
     @Override
