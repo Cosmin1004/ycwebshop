@@ -19,9 +19,8 @@ public class ProductRepositoryImpl implements ProductRepository {
     @Override
     public List<Product> findAllProductsFromASpecificCategory(InputStream inputStream,
                                                               String categoryString) {
-        Category category = CategoryUtil.processCategory(categoryString);
-
         List<Product> allProducts = FileReaderUtil.readAllProducts(inputStream);
+        Category category = CategoryUtil.processCategory(categoryString);
 
         return allProducts.stream().
                 filter(product -> product.getCategory() == category).
@@ -39,6 +38,7 @@ public class ProductRepositoryImpl implements ProductRepository {
                 found = product;
             }
         }
+
         return found;
     }
 

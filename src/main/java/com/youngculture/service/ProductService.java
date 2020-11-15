@@ -18,8 +18,8 @@ public interface ProductService {
     void handleAddToCart(InputStream inputStream, String productName)
             throws IOException;
 
-    List<Product> handleGetProducts(InputStream inputStream, String buttonCategory);
+    List<Product> handleGetProducts(InputStream inputStream, String category);
 
-    boolean handleCategoryFieldRendered(String buttonCategory);
+    boolean handleCategoryFieldRendered(String category);
 
 }

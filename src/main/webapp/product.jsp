@@ -15,31 +15,31 @@
     <div class="center">
         <div class="btn-group">
             <form action="${pageContext.request.contextPath}/product" method="get">
-                <button type="submit" class="btn btn-info" name="categoryButton"
+                <button type="submit" class="btn btn-info" name="category"
                         value="all">ALL
                 </button>
-                <button type="submit" class="btn btn-primary" name="categoryButton"
+                <button type="submit" class="btn btn-primary" name="category"
                         value="automotive">Automotive
                 </button>
-                <button type="submit" class="btn btn-primary" name="categoryButton"
+                <button type="submit" class="btn btn-primary" name="category"
                         value="clothingAndShoes">Clothing and shoes
                 </button>
-                <button type="submit" class="btn btn-primary" name="categoryButton"
+                <button type="submit" class="btn btn-primary" name="category"
                         value="computers">Computers
                 </button>
-                <button type="submit" class="btn btn-primary" name="categoryButton"
+                <button type="submit" class="btn btn-primary" name="category"
                         value="phones">Phones
                 </button>
-                <button type="submit" class="btn btn-primary" name="categoryButton"
+                <button type="submit" class="btn btn-primary" name="category"
                         value="electronics">Electronics
                 </button>
-                <button type="submit" class="btn btn-primary" name="categoryButton"
+                <button type="submit" class="btn btn-primary" name="category"
                         value="food">Food
                 </button>
-                <button type="submit" class="btn btn-primary" name="categoryButton"
+                <button type="submit" class="btn btn-primary" name="category"
                         value="healthAndBeauty">Health and beauty
                 </button>
-                <button type="submit" class="btn btn-primary" name="categoryButton"
+                <button type="submit" class="btn btn-primary" name="category"
                         value="homeAndGarden">Home and garden
                 </button>
             </form>
@@ -76,7 +76,7 @@
                                 <td style="text-transform: capitalize">${category}</td>
                             </c:if>
                             <td>${product.description}</td>
-                            <td style="color: red">${product.price} ${currency}</td>
+                            <td style="color: red; width: 100px;">${product.price} ${currency}</td>
                             <td>
                                 <form class="center" action="${pageContext.request.contextPath}/product"
                                       method="post">

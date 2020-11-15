@@ -18,7 +18,7 @@ public class FileWriterUtil {
             File file = new File(
                     System.getProperty("user.home") + "//Desktop//cart.txt");
 
-            if (!file.exists()) {
+            if ( ! file.exists()) {
                 file.createNewFile();
             }
 

@@ -38,23 +38,25 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> handleGetProducts(InputStream inputStream,
-                                           String buttonCategory) {
+                                           String category) {
         List<Product> products;
-        if (buttonCategory == null || buttonCategory.equals("all")) {
+        if (category == null || category.equals("all")) {
             products = getAllProducts(inputStream);
         } else {
             products = getAllProductsFromASpecificCategory(inputStream,
-                    buttonCategory);
+                    category);
         }
+
         return products;
     }
 
     @Override
-    public boolean handleCategoryFieldRendered(String buttonCategory) {
+    public boolean handleCategoryFieldRendered(String category) {
         boolean rendered = false;
-        if (buttonCategory == null || buttonCategory.equals("all")) {
+        if (category == null || category.equals("all")) {
             rendered = true;
         }
+
         return rendered;
     }
 

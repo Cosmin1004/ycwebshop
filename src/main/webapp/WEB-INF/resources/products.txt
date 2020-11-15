@@ -12,12 +12,17 @@ TP-Link Archer C6 ; computers ; Router wireless TP-Link Archer C6, AC1200, Gigab
 Logitech M170 ; mouse ; Mouse wireless Logitech M170, Grey ; 32
 Acer Nitro 5 AN515-54 ; laptop ; Laptop Gaming Acer Nitro 5 AN515-54 cu procesor Intel Core i5-9300H pana la 4.10 GHz, 15.6" Full HD, 8GB, 256GB SSD, NVIDIA GeForce GTX 1650 4GB, No OS, Black ; 4600
 iPhone 11 Pro ; phone ; Telefon APPLE iPhone 11 Pro, 64GB, Space Grey ; 3939.90
-SAMSUNG Galaxy S20+ ; phone ; Telefon SAMSUNG Galaxy S20+, 128GB, 8GB RAM, Dual SIM, 4G, Cosmic Black ; 2974.92
+SAMSUNG Galaxy S20+ ; phone ; Telefon SAMSUNG Galaxy S20+, 128GB, 8GB RAM, Dual SIM, 4G, Cosmic Black, rezolutie 3200 x 1440 (Quad HD+), Rear Camera - Resolution (Multiple): 12.0 MP + 12.0 MP + 64.0 MP + VGA  ; 2974.92
 Philips OneBlade ; beauty ; Aparat hibrid de barbierit si tuns barba Philips OneBlade QP2520/30, 3 piepteni, 1 lama suplimentara, Acumulatori, Negru/Verde ; 174.99
 Adidas Ice Dive ; healtyAndBeauty ; Set Adidas Ice Dive, barbati: After shave, 50 ml + Deodorant spray, 150 ml + Gel de dus, 250 ml ; 29.59
-Cotlet cu Parmesan ; food ; Cotlet de porc, specialitate de branza tare, pesmet, condimente ; 20 
-Pizza Traditionala ; food ; Branza burduf, ceapa rosie, kaizer, mix branzeturi(cascaval + mozzarella), sos, aluat ; 29.50
+Cotlet cu Parmesan ; food ; Ingrediente: cotlet de porc, specialitate de branza tare, pesmet, condimente ; 20 
+Pizza Traditionala ; pizza ; Ingrediente: branza burduf, ceapa rosie, kaizer, mix branzeturi(cascaval + mozzarella), sos, aluat ; 29.50
 Xiaomi Mi Robot Vacuum ;  electronics ; Robot aspirare Xiaomi Mi Robot Vacuum, 50 W, Clasa A+++, 5200 mAh, 14.4 V, App, Smart Vision Mapping, Alb ; 1499
 Playstation 4 ; computers ; Consola Sony Playstation 4 PRO (NEO), 1TB, Negru ; 1899
 FIFA20  ; computers ; Joc FIFA20 pentru PC ; 143
 Skechers ; shoes ; Ghete din piele intoarsa cu insertii de blana sintetica On The Gor ; 219
+Volvo XC60 ; cars ;  XC60 Momentum B4 Mild hybrid, transmisie 4x4 automat, motor 2 400 cm3 benzina, 197 CP, consum mediu: 3.4 - 10.0, emisii medii CO2: 76-228 ; 39000
+Geaca de iarna; clothes; Geaca de iarna TOMMY HILFIGER pe alb, forma potrivita: regular fit, material suprafata: 100% poliester, captuseala: 100% poliester ; 929.90
+The Goodfather ; burger ; The Goodfather (Italian Burger), ingrediente: paine brioche, ketchup, carne vita, mozzarella, rucola, pesto de rosii uscate ; 27
+
+##
