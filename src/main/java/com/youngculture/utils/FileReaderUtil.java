@@ -14,11 +14,9 @@ public class FileReaderUtil {
 
     public static List<Product> readAllProducts(InputStream inputStream) {
         List<Product> productList = new ArrayList<>();
-
-        try (BufferedReader bufferedReader =
+        try (BufferedReader fileReader =
                      new BufferedReader(new InputStreamReader(inputStream))) {
-
-            String line = bufferedReader.readLine();
+            String line = fileReader.readLine();
             boolean skipLine = false;
 
             while (line != null) {
@@ -34,7 +32,8 @@ public class FileReaderUtil {
                 }
 
                 skipLine = false;
-                line = bufferedReader.readLine();
+
+                line = fileReader.readLine();
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -55,6 +54,7 @@ public class FileReaderUtil {
                 .setPrice(price)
                 .build();
     }
+
 }
 
 

@@ -19,27 +19,20 @@ public class ProductRepositoryImpl implements ProductRepository {
     @Override
     public List<Product> findAllProductsFromASpecificCategory(InputStream inputStream,
                                                               String categoryString) {
-        List<Product> allProducts = FileReaderUtil.readAllProducts(inputStream);
         Category category = CategoryUtil.processCategory(categoryString);
 
-        return allProducts.stream().
-                filter(product -> product.getCategory() == category).
-                collect(Collectors.toList());
+        return FileReaderUtil.readAllProducts(inputStream)
+                .stream()
+                .filter(product -> product.getCategory() == category)
+                .collect(Collectors.toList());
     }
 
 
     @Override
-    public Product findProductByName(InputStream inputStream,
-                                     String productName) {
-        List<Product> allProducts = FileReaderUtil.readAllProducts(inputStream);
-        Product found = null;
-        for (Product product : allProducts) {
-            if (product.getName().equals(productName)) {
-                found = product;
-            }
-        }
-
-        return found;
+    public Product findProductByName(InputStream inputStream, String productName) {
+        return FileReaderUtil.readAllProducts(inputStream)
+                .stream().filter(product -> product.getName().equals(productName))
+                .findFirst().orElse(null);
     }
 
 }
