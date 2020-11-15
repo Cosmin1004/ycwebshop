@@ -10,7 +10,7 @@ public interface ProductRepository {
     List<Product> findAllProducts(InputStream inputStream);
 
     List<Product> findAllProductsFromASpecificCategory(InputStream inputStream,
-                                                       String categoryString);
+                                                       String category);
 
     Product findProductByName(InputStream inputStream, String productName);
 

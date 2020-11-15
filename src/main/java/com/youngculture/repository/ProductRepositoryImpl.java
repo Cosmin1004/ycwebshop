@@ -18,12 +18,12 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public List<Product> findAllProductsFromASpecificCategory(InputStream inputStream,
-                                                              String categoryString) {
-        Category category = CategoryUtil.processCategory(categoryString);
+                                                              String category) {
 
         return FileReaderUtil.readAllProducts(inputStream)
                 .stream()
-                .filter(product -> product.getCategory() == category)
+                .filter(product -> product.getCategory() ==
+                        CategoryUtil.processCategory(category))
                 .collect(Collectors.toList());
     }
 

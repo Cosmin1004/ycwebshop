@@ -10,7 +10,7 @@ public interface ProductService {
     List<Product> getAllProducts(InputStream inputStream);
 
     List<Product> getAllProductsFromASpecificCategory(InputStream inputStream,
-                                                      String categoryString);
+                                                      String category);
 
     Product getProductByName(InputStream inputStream, String productName);
 
