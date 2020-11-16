@@ -8,7 +8,7 @@
     <style> <%@include file="/WEB-INF/css/style.css"%> </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-    <script language="JavaScript">
+    <script>
         function afterAddToCart(product) {
             alert("Product " + product + " was added to the cart " +
                 "(cart.txt from your Desktop) !");
