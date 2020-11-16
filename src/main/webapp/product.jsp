@@ -50,6 +50,8 @@
 <div id="wrapper">
     <div class="container" style="padding-bottom: 100px;">
         <c:if test="${fn:length(products) > 0}">
+            <img class="center" style="margin-bottom: 5px"
+                 src="${pageContext.request.contextPath}/Images/youngCulture.jpg" alt="YoungCulture">
             <div class="table-responsive">
                 <table class="table table-hover table-sm table-striped">
                     <thead class="thead">
