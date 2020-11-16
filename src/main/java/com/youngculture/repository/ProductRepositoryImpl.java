@@ -1,6 +1,5 @@
 package com.youngculture.repository;
 
-import com.youngculture.model.Category;
 import com.youngculture.model.Product;
 import com.youngculture.utils.CategoryUtil;
 import com.youngculture.utils.FileReaderUtil;
