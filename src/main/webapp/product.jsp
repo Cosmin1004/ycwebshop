@@ -7,6 +7,13 @@
     <title>young.culture</title>
     <style> <%@include file="/WEB-INF/css/style.css"%> </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script language="JavaScript">
+        function afterAddToCart(product) {
+            alert("Product " + product + " was added to the cart " +
+                "(cart.txt from your Desktop) !");
+        }
+    </script>
 </head>
 
 <body>
@@ -49,9 +56,14 @@
 
 <div id="wrapper">
     <div class="container" style="padding-bottom: 100px;">
+        <c:if test="${fn:length(products) == 0}">
+            <img class="image" alt="No product found..."
+                 src="${pageContext.request.contextPath}/Images/noProducts.png"/>
+        </c:if>
         <c:if test="${fn:length(products) > 0}">
             <img class="center" style="margin-bottom: 5px"
-                 src="${pageContext.request.contextPath}/Images/youngCulture.jpg" alt="YoungCulture">
+                 src="${pageContext.request.contextPath}/Images/youngCulture.jpg"
+                 alt="YoungCulture">
             <div class="table-responsive">
                 <table class="table table-hover table-sm table-striped">
                     <thead class="thead">
@@ -83,6 +95,7 @@
                                 <form class="center" action="${pageContext.request.contextPath}/product"
                                       method="post">
                                     <button type="submit" class="btn btn-success"
+                                            onclick="afterAddToCart('${product.name}')"
                                             name="productNameFromButton"
                                             value="${product.name}">Add to cart
                                     </button>
@@ -93,12 +106,10 @@
                 </table>
             </div>
         </c:if>
-        <c:if test="${fn:length(products) == 0}">
-            <img class="image" alt="No product found..."
-                 src="${pageContext.request.contextPath}/Images/noProducts.png"/>
-        </c:if>
+
     </div>
     <jsp:include page="/footer.jsp"/>
 </div>
+
 </body>
 </html>

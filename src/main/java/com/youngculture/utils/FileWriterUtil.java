@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 public class FileWriterUtil {
 
     private static final SimpleDateFormat simpleDateFormat =
-            new SimpleDateFormat("dd.MM.yyyy HH.mm.ss");
+            new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
     public static void writeProductToFile(Product product) throws IOException {
         FileWriter fileWriter = null;
