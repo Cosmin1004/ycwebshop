@@ -78,7 +78,8 @@
                     </thead>
                     <c:forEach var="product" items="${products}">
                         <c:set var="categoryTemp1" value="${product.category}"/>
-                        <c:set var="categoryTemp2" value="${fn:replace(categoryTemp1, '_', ' ')}"/>
+                        <c:set var="categoryTemp2"
+                               value="${fn:replace(categoryTemp1, '_', ' ')}"/>
                         <c:set var="category" value="${fn:toLowerCase(categoryTemp2)}"/>
                         <c:set var="currency" value="Lei"/>
                         <c:if test="${product.category == 'AUTOMOTIVE'}">
@@ -92,7 +93,8 @@
                             <td>${product.description}</td>
                             <td style="color: red; width: 100px;">${product.price} ${currency}</td>
                             <td>
-                                <form class="center" action="${pageContext.request.contextPath}/product"
+                                <form class="center"
+                                      action="${pageContext.request.contextPath}/product"
                                       method="post">
                                     <button type="submit" class="btn btn-success"
                                             onclick="afterAddToCart('${product.name}')"
