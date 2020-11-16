@@ -46,7 +46,7 @@ public class CategoryUtil {
         return category;
     }
 
-    public static boolean containsWords(String inputString, String[] items) {
+    private static boolean containsWords(String inputString, String[] items) {
         return Arrays.stream(items).anyMatch(item -> item.toLowerCase()
                 .equals(inputString.toLowerCase()));
     }
